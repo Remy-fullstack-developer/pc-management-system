@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assets/css/location.css"> -->
+    <link rel="icon" href="./icon/new logo.png">
+    <title>PMS | Back to Operations</title>
+    <style>
+        :root {
+    --color-default: #2b180d;
+    --color-primary: #56b8e6;
+    --color-secondary: #1b2f45;
+}
+
+:root {
+    --color--bg1: rgb(4, 136, 189);
+    --color-txts: whitesmoke;
+    --color--bg2: rgba(4, 137, 189, 0.144);
+    --color-txts: whitesmoke;
+    --color-txtw: whitesmoke;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: popp;
+}
+body{
+    background: url(./assets/bg.jpg);
+    background-size: cover;
+    
+}
+.PassReset {
+    background-color: #000000bd;
+    width: 100%;
+    height: 789px;
+    position: fixed;
+    /* display: none; */
+    /* margin-top: 20vh; */
+}
+
+.forget {
+    margin-top: 100px;
+    background-color: rgba(24, 153, 233, 0.562);
+    width: fit-content;
+    color: white;
+    padding: 20px 40px;
+    width: fit-content;
+    /* margin-left: 26%;     */
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin: auto;
+    /* margin: auto; */
+}
+
+.forget .call {
+    padding: 30px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    /* gap: 0rem; */
+}
+.forget p{
+    font-size: 25px;
+}
+.forget .call a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    /* text-shadow: 1px 0px 1px black; */
+}
+@font-face {
+    font-family:popp;
+    src: url(./font/Poppins-Medium.ttf);
+}
+
+#close {
+    float: left;
+    font-family:popp;
+    text-decoration: none;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+}
+#close:hover{
+    color: brown;
+}
+.PassReset h3{
+    font-size: 30px;
+    font-family:popp;
+    color: #000;
+    text-shadow: 1px 0px 1px black;
+}
+.PassReset h4{
+    font-size: 25px;
+    color: #000;
+    text-shadow: 1px 0px 1px black;
+}
+#myImg {
+    width: 100px;
+    height: 100px;
+}
+.forget .head{
+    display: flex;
+    gap: 6rem;
+}
+.forget .head a{
+    margin-top: -15px;
+}
+.call a{
+   transition: 0.3s ease-in-out;
+}
+.call a:hover{
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+<div class="PassReset" id="forget"><br><br><br><br>
+    <div class="forget" id="popup">
+        <div class="head">
+            <p>Dear Admin Choose Trade:</p>
+        <a href="operation.html" onclick="close()" id="close">&times;</a>
+        </div>
+            <div class="call">
+              <a href="software.html"> <b>&square; &nbsp;SOFTWARE DEVELOPMENT</b></a> <br>
+              <a href="constraction.html"> &square; &nbsp;<b>BUILDING  AND CONSTRACTION (MASONRY)</b></a> <br>
+              <a href="computersystem.html">&square;  &nbsp;<b>COMPUTER SYSTEM AND ARCHITECTURE</b></a> <br>
+              <a href="landsurveyng.html"> &square; &nbsp;<b>LAND SURVEYNG</b></a> <br>
+            </div>
+        </div>
+    </div>
+    <script src="./js/location.js"></script>
+</body>
+</html>

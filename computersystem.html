@@ -1,0 +1,290 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>PMS | Computer System And Architecture</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="icon" href="./icon/new logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/image.css" rel="stylesheet">
+
+
+  </head>
+
+  <body class="page-about">
+    <div class="profile" id="profile">
+      <div class="identity">
+        <div class="head" style="text-align: left;">
+          <h1><b style="font-weight: normal;color:rgba(180, 180, 180, 255);">Dear </b><?php echo $_SESSION['Username'];  ?></h1> 
+          <!-- <a href="" id="close">&times;</a> -->
+        </div>
+        <div class="logout">
+          <a href="#" onclick=" 
+            let x = window.confirm('Are you sure to logout?');
+            if (x == true) {
+                location.replace('logout.html');
+            } else {  
+                location.replace('home1.html');
+            }
+        ">
+            <img src="./icon/logout_rounded_left_30px.png" alt="">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="d-flex align-items-center" title="PC Management System"><img src="./icon/new logo.png" alt="PMS logo"></h1>
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="user.html">User</a></li>
+              <li><a href="operation.html">Operations</a></li>
+              <li><a href="reportpage.html">Report</a></li>
+              <li><a href="registerpage.html">Register</a></li>
+              <li>
+                <a href="#" id="profile" title="Account" style="margin-left: 40px">
+                <img src="icon/male_user_50px.png" alt="" style="width: 30px;height: 30px;margin-left: -30px; display: none;" id="icon1" title="Hide Profile" onclick="HidePopup()">
+                <img src="icon/male_user_50px.png" alt="" style="width: 30px;height: 30px;margin-left: -30px;" id="icon2" title="Show Profile" onclick="showPopup()">
+                <style>
+                  .profile,#profle{
+                    position: fixed;
+                    width:400px;
+                    height: fit-content;
+                    background-color: black;
+                    z-index: 1500;
+                    border-radius: 5px;
+                    margin-top: 90px;
+                    margin-left:100%;
+                    display: block;
+                    padding: 20px 50px;
+                  }
+                  .profile .identity .head h1{
+                    color: #f3f3f3;
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 35px;
+                  }
+                  .profile .identity .head a{
+                    font-size: 35px;
+                    margin-top: -18px;
+                  
+                  }
+                  .profile .identity .line{
+                    display: flex;
+                    gap: 0.3rem;
+                    width: fit-content;
+                    margin: auto;
+                    margin-top: -10px;
+                  }
+                  .profile .identity .line p{
+                    font-size: 20px;
+                    color: #999;
+                    font-weight: lighter;
+                  }
+                  .profile .identity .line h2{
+                    margin-top: 0px;
+                    color: #f3f3f3;
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-top: 5px;
+                  }
+                  .profile .identity .setting a,.profile .identity .logout a{
+                    font-weight: bold;
+                    display: flex;
+                    gap: 0.5rem;
+                    font-size: 20px;
+                    color: rgba(180, 180, 180, 255);
+                    margin-top: 20px;
+                  }
+                  .profile .identity .setting a:hover,.profile .identity .logout a:hover{
+                    letter-spacing: 2px;
+                    color: #f3f3f3;
+                  }
+                              </style>
+                              <script>
+                                function showPopup(){
+                      document.getElementById('icon1').style.display='block';
+                      document.getElementById('icon2').style.display='none';
+                      document.getElementById('profile').style.display='block';
+                      document.getElementById('profile').style.marginLeft='70%';
+                      document.getElementById('profile').style.transition='0.6s';
+                  }
+                  function HidePopup(){
+                      document.getElementById('icon1').style.display='none';
+                      document.getElementById('icon2').style.display='block';
+                      document.getElementById('profile').style.marginLeft='100%';
+                      document.getElementById('profile').style.transition='0.6s';
+                  }
+                              </script>
+              </a>
+            </li>
+            </ul>
+        </nav><!-- .navbar -->
+
+      </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+      <!-- ======= Breadcrumbs ======= -->
+      <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/about-header.jpg');">
+        <div class="container position-relative d-flex flex-column align-items-center">
+
+          <h2 title="Computer System And Architecture">CSA</h2>
+          <ol>
+            <li><a href="home1.html">Home</a></li>
+            <li>CSA</li>
+          </ol>
+
+        </div>
+      </div><!-- End Breadcrumbs -->
+
+
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
+
+          <table id="users" width="100%">
+            <h2>Withdrawn Pc</h2>
+            <div class="search">
+              <input type="text" name="" placeholder="Type Here To Search Student...." id="mySearch" onkeyup="search()">
+            </div>
+            <tr>
+              <th>Profile</th>
+              <th>Names</th>
+              <th>Class</th>
+              <th>PC name</th>
+              <th>Serial number</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th colspan="2">Actions</th>
+            </tr>
+           
+          </table>
+          <table id="users_2" width="100%">
+            <h2>Deposited Pc</h2>
+            <div class="search">
+              <input type="text" name="" placeholder="Type Here To Search Student...." id="mySearch2" onkeyup="search2()">
+            </div>
+            <tr>
+              <th>Profile</th>
+              <th>Names</th>
+              <th>Class</th>
+              <th>Pc name</th>
+              <th>Serial number</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Actions</th>
+            </tr>
+      
+              <tr>
+                <td>
+                  <a href="getphoto.php?ID=<?php echo $row['id'] ?> & page=<?php echo"computersystem"?> </a>
+                </td>
+                <td>
+                  <?php echo $row['fullname'] ?>
+                </td>
+                <td>
+                  <?php echo $row['class'] ?>
+                </td>
+                <td>
+                  <?php echo $row['pcname'] ?>
+                </td>
+                <td>
+                  <?php echo $row['serialnumber'] ?>
+                </td>
+                <td>
+                  <?php echo $row['date'] ?>
+                </td>
+                <td>
+                  <?php echo $row['time'] ?>
+                </td>
+
+                <form action="" method="POST">
+                  <td><a href="withdraw.html">withdraw</a></td>
+                </form>
+              </tr>
+            <?php
+            }
+            ?>
+          </table>
+        </div>
+
+        </div>
+      </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+
+      <!-- ======= Footer ======= -->
+      <footer id="footer" class="footer">
+        <div class="footer-legal">
+          <div class="container">
+            <div class="copyright">
+              &copy; Copyright <strong><span>Any Coding Group</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+              Developed by <a href="https://portfolio-remy-one.vercel.app/">Remyboi</a>
+            </div>
+          </div>
+        </div>
+      </footer><!-- End Footer --><!-- End Footer -->
+
+      <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+      <div id="preloader"></div>
+
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+      <script src="./js/search.js"></script>
+      <script src="./js/search2.js"></script>
+
+  </body>
+
+  </html>

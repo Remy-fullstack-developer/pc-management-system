@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/media.css"> -->
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="icon" href="./icon/new logo.png">
+    <title>PMS | Login</title>
+</head>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+@font-face {
+  font-family:pop ;
+  src: url(./font/Poppins-Medium.ttf);
+}
+    :root {
+  --color-default: #2b180d;
+  --color-primary: #56b8e6;
+  --color-secondary: #1b2f45;
+}
+
+:root {
+  --color--bg1: rgb(4, 136, 189);
+  --color-txts: whitesmoke;
+  --color--bg2: rgba(4, 137, 189, 0.144);
+  --color-txts: whitesmoke;
+  --color-txtw: whitesmoke;
+}
+    body{
+        font-family: pop;
+        overflow: hidden;
+    }
+    .content{
+        display: flex;
+    }
+    .left{
+        width: 50%;
+        background: linear-gradient(180deg,rgba(4, 137, 189, 0),rgba(4, 137, 189, 0.459),rgb(4, 137, 189)),url(./assets/bg.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 900px;
+        background-repeat: repeat;
+        background-color: white;
+    }
+    form{
+        width: 50%;
+        height: 500px;
+        /* background-color: black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    form h1{
+        font-family: pop;
+        color: var(--color--bg1);
+        text-align: center;
+    }
+    form input{
+        height: 45px;
+        font-size: 19px;
+        padding: 5px;
+        border:1px solid var(--color--bg1);
+        border-radius: 5px;
+        width: 500px;
+        margin-top: 20px;
+    }
+    form input:focus{
+        outline: 1px solid var(--color--bg1);
+    }
+    form input[type='submit']{
+        width: 510px;
+        background-color: var(--color--bg1);
+        color: white;
+        height: 50px;
+        transition: 0.6s ease-in-out;
+        font-weight: bold;
+    }
+    form input[type='submit']:hover{
+        cursor: pointer;
+        letter-spacing: 2px;
+        background-color: var(--color--bg1);
+        transition: 0.6s ease-in-out;
+    }
+    form .center{
+        padding: 20px;
+        box-shadow: 0px 0px 4px black;
+        background-color: #fff;
+        border-radius: 10px;   
+        margin-top: 150px;
+    }
+    form .center .pass{
+        display: flex;
+    }
+
+    form .center .pass img{
+        width: 30px;
+        margin-top: 25px;
+        margin-left: -40px;
+        height: 30px;
+    }
+    form .center .pass img:hover{
+        cursor: pointer;
+    }
+    .eyetoggle{
+        margin-top: 10px;
+    }
+    #toggle{
+        opacity: 50%;
+    }
+    #toggle2{
+        z-index: -5;
+        display: none;
+    }
+    .line{
+        display: flex;
+        gap: 1rem;
+        margin-top: 10px;
+    }
+    .l,.r{
+        width: 190px;
+        height: 1px;
+        margin-top: 10px;
+        background-color: black;
+    }
+    .forgettext{
+        width: fit-content;
+        padding-top: 10px;
+        margin: auto;
+    }
+    .forgettext a{
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--color--bg1);
+        text-decoration: underline;
+    }
+    .span{
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+    }
+    .span a{
+        color: var(--color--bg1);
+        text-decoration: none;
+    }
+    .PassReset,#forget{
+        background-color: rgba(0, 0, 0, 0.808);
+        width: 100%;
+        display: none;
+        height: 1000vh;
+        z-index: 100;
+        position: fixed;
+    }
+    .forget,#popup{
+        background-color: black;
+        border-radius: 5px;
+        width: fit-content;
+        margin: auto;
+        z-index: 90;
+        width: 0;
+        opacity: 0%;
+        margin-top: 120px;
+        padding: 40px 100px;
+    }
+    .forget p{
+        font-size: 25px;
+        border-bottom: 1px solid white;
+        color: #fff;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    .forget .call,.forget .email{
+        gap: 0.5rem;
+        display: flex;
+        margin-top: 20px;
+    }
+    p b{
+        color: var(--color--bg1);
+    }
+    .forget .call img,.forget .email img{
+        width: 25px;
+        height: 25px;
+    }
+    .forget .call h2,.forget .email h2{
+        color: white;
+        font-weight: lighter;
+
+    }
+    #close{
+        font-size: 60px;
+        float: right;
+        padding-right: 50px;
+        color: coral;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    @media screen And (max-width:1117px) {
+        .left{
+            width: 40%;
+        }
+        form{
+            width: 40%;
+            padding-left: 10%;
+        }
+    }
+    @media screen And (max-width:1117px) {
+        .left{
+            display: none;
+        }
+        form{
+            width: fit-content;
+            margin: auto;
+    
+        }
+        }
+   @media screen And (max-width:664px) {
+    .span {
+        width: 300px;
+    }
+    form input{
+        height: 40px;
+        font-size: 19px;
+        padding: 5px;
+        border:1px solid var(--color--bg1);
+        border-radius: 5px;
+        width: 350px;
+        margin-top: 20px;
+    }
+    form input[type='submit']{
+        width: 360px;
+        background-color: var(--color--bg1);
+        color: white;
+        height: 50px;
+        transition: 0.6s ease-in-out;
+        font-weight: bold;
+    }
+    .line{
+        width: fit-content;
+        display: flex;
+        margin: auto;
+        gap: 1rem;
+        margin-top: 10px;
+
+    }
+    .l,.r{
+        width: 100px;
+        height: 1px;
+        margin-top: 10px;
+        background-color: black;
+    }
+       
+    }
+   @media screen And (max-width:490px) {
+    form{
+        padding-right: 20px;
+        margin-left: -10px;
+    }
+    .span {
+        width: 300px;
+    }
+    form input{
+        height: 40px;
+        font-size: 19px;
+        padding: 5px;
+        border:1px solid var(--color--bg1);
+        border-radius: 5px;
+        width: 300px;
+        margin-top: 20px;
+    }
+    form input[type='submit']{
+        width: 310px;
+        background-color: var(--color--bg1);
+        color: white;
+        height: 50px;
+        transition: 0.6s ease-in-out;
+        font-weight: bold;
+    }
+    .line{
+        width: fit-content;
+        display: flex;
+        margin: auto;
+        gap: 1rem;
+        margin-top: 10px;
+
+    }
+    .l,.r{
+        width: 50px;
+        height: 1px;
+        margin-top: 10px;
+        background-color: black;
+    }
+       
+    }
+    @media screen And (max-height:800px) {
+        .left{
+            height: 700px;
+        }
+    }
+    @media screen And (max-height:90000px) {
+        .left{
+            height: 800px;
+        }
+    }
+</style>
+<body>
+    <div class="PassReset" id="forget"><br><br>
+        <a href="" onclick="close()" id="close">&times;</a>
+        <div class="forget" id="popup">
+            <p>Dear User, Call System Admin</p>
+            <br>
+            <div class="call" title="Call This number for Support">
+                <img src="./icon/phone_26px.png">
+                <h2>+250793016019, +250788710248</h2>
+                <!-- <img src="../icon/phone_26px.png">
+                <h2>+250793016019</h2> -->
+
+            </div>
+            <div class="email" title="Compose Support Email ">
+                <img src="./icon/envelope_30px.png" alt="">
+                <h2>someone@example.com</h2>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <!-- <img src="./assets/bg.jpg" alt=""> -->
+        </div>
+        <!-- <center> -->
+            <form action="" method="post" autocomplete="OFF">
+                <div class="center">
+                    <h1>Login Here</h1>
+                    <input type="text" name="Uname" placeholder="@username" required>
+                <div class="pass">
+                    <input type="password" name="PassCode" placeholder="xxxx-xxxx" minlength="4"  maxlength="8" required id="psrfied"
+                        onclick="input()">
+                        <div class="eyetoggle">
+                    <img src="./icon/eye_24px.png" alt="" onclick="toggleicon()" id="toggle" class="toggleicon">
+                    <img src="./icon/invisible_30px.png" onclick="toggleicon2()" id="toggle2">
+                        </div>
+                </div>
+                <!-- <nav><input type="checkbox" name="" id="" required>  By creating an account you agree to our <nav>Terms & Privacy</nav> <br> -->
+                <input type="submit" name="Send" id="" value="Login">
+                <div class="line">
+                    <div class="l"></div>
+                    <p>More Options</p>
+                    <div class="r"></div>
+                </div>
+                <div class="forgettext">
+                    <a href="#" onclick="forget()" id="Fpassword" >Forget password</a>
+                </div>
+                <br>
+                <div class="span"><b>&copy;</b> Copyright  <b> <a href="./index.html">Any Coding Group 
+                </b> </a>Alright reserved. 
+               <p>Developed by <b>Remyboi</b></p> 
+                </div>
+                </div>
+            </form>
+        <!-- </center> -->
+    </div>
+    <script>
+        function forget() {
+            document.getElementById('forget').style.display = 'block';
+            document.getElementById('popup').style.marginTop = '140px';
+            document.getElementById('popup').style.width='fit-content';
+            document.getElementById('popup').style.opacity='100%';
+            document.getElementById('popup').style.transition='3s';
+            
+
+        }
+        function close() {
+            document.getElementById('forget').style.display = 'none';
+        }
+        function toggleicon() {
+            document.getElementById('psrfied').type='text';
+            document.getElementById('toggle').style.display='none';
+            document.getElementById('toggle2').style.display='block';
+        }
+        function toggleicon2() {
+            document.getElementById('psrfied').type='password';
+            document.getElementById('toggle').style.display='block';
+            document.getElementById('toggle2').style.display='none';
+        }
+    </script>
+</body>
+
+</html>
